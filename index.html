@@ -1,0 +1,56 @@
+<html>
+
+    <head>
+
+        <title>Sorting Algorithm Visualizer</title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <script>
+
+            let VisualizerFrame = document.createElement('div');
+
+            let VisualizerData = [1,6,7,2,3,0,9,8,4,5]
+            let VisualizerBars = []
+
+            window.onload = () => {
+
+                VisualizerFrame.id = 'visualizer';
+                VisualizerFrame.style.width = window.innerWidth;
+                VisualizerFrame.style.height = window.innerHeight;
+
+                document.appendChild(VisualizerFrame);
+
+                drawBars(VisualizerData);
+
+            }
+
+            function drawBars(data) {
+
+                let barsToDraw = VisualizerBars.style.width / data.length;
+
+                for(let i = 0; i < barsToDraw; i++) {
+
+                    let bar = document.createElement('div');
+                    bar.id = "visualizer-bar";
+
+                    bar.style.width = barsToDraw;
+                    bar.style.height = "100%";
+                    bar.style.backgroundColor = "#FFFFFF";
+
+                    bar.parentElement = VisualizerFrame;
+
+                    VisualizerBars += bar;
+
+                }
+
+            }
+
+        </script>
+
+    </body>
+
+</html>
